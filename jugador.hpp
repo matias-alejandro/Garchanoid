@@ -13,6 +13,7 @@ class Jugador : public sf::Sprite
 
 		float ladoDerecho();
 		float ladoIzquierdo();
+		float ladoSuperior();
 
 		void actualizar();
 	private:

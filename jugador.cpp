@@ -44,3 +44,8 @@ float Jugador::ladoIzquierdo()
 	return this->getPosition().x;
 }
 /*********************************************************************/
+float Jugador::ladoSuperior()
+{
+	return this->alto;
+}
+/*********************************************************************/
