@@ -49,3 +49,8 @@ float Jugador::ladoSuperior()
 	return this->alto;
 }
 /*********************************************************************/
+float Jugador::mitad()
+{
+	return return this->getPosition().x+(this->ancho)/2;
+}
+/*********************************************************************/
