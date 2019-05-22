@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "constantes.hpp"
+#include "pelota.hpp"
 
 class Jugador : public sf::Sprite
 {
@@ -16,8 +17,10 @@ class Jugador : public sf::Sprite
 		float ladoSuperior();
 		float mitad();
 
-		void actualizar();
+		void actualizar(sf::RenderWindow &ventana);
+		void teclado(sf::Event &evento);
 	private:
+		Pelota pelota;
 		int alto, ancho;
 };
 #endif

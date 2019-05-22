@@ -1,7 +1,7 @@
 #Makefile
 
 LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
-OBJS = main.o juego.o jugador.o
+OBJS = main.o juego.o jugador.o pelota.o
 
 all: Garchanoid
 

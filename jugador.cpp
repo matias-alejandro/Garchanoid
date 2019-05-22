@@ -16,9 +16,12 @@ Jugador::Jugador() : sf::Sprite()
 	this->setTexture(jugadorimg);
 }
 /*********************************************************************/
-void Jugador::actualizar()
+void Jugador::actualizar(sf::RenderWindow &ventana)
 {
 	this->move(velocidad);
+
+	pelota.actualizar(this->mitad(),this->ladoSuperior());
+	ventana.draw(this->pelota);
 	
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::A) && this->ladoIzquierdo() > 0)
 	{
@@ -34,6 +37,14 @@ void Jugador::actualizar()
 	}
 }
 /*********************************************************************/
+void Jugador::teclado(sf::Event &evento)
+{
+	if(evento.key.code == sf::Keyboard::W)
+	{
+		this->pelota.tirar();
+	}
+}
+/*********************************************************************/
 float Jugador::ladoDerecho()
 {
 	return this->getPosition().x+this->ancho;
@@ -46,11 +57,11 @@ float Jugador::ladoIzquierdo()
 /*********************************************************************/
 float Jugador::ladoSuperior()
 {
-	return this->alto;
+	return this->getPosition().y-this->alto;
 }
 /*********************************************************************/
 float Jugador::mitad()
 {
-	return return this->getPosition().x+(this->ancho)/2;
+	return this->getPosition().x+(this->ancho)/2;
 }
 /*********************************************************************/

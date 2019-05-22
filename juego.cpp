@@ -13,7 +13,7 @@ void Juego::actualizar(sf::RenderWindow &ventana)
 	switch(modo)
 	{
 		case ItemJuego:
-			this->jugador.actualizar();
+			this->jugador.actualizar(ventana);
 			ventana.draw(this->jugador);
 		break;
 
@@ -37,5 +37,6 @@ void Juego::KeyPressed(sf::Event &evento)
 /*********************************************************************/
 void Juego::KeyReleased(sf::Event &evento)
 {
+	this->jugador.teclado(evento);
 }
 /*********************************************************************/

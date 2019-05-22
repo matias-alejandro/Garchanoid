@@ -35,6 +35,10 @@ int main()
 					break;
 				case evento.KeyReleased:
 					juego.KeyReleased(evento);
+					if(evento.key.code == sf::Keyboard::Key::Escape)
+					{
+						ventana.close();
+					}
 					break;
 				default:
 					break;
